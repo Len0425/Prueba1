@@ -1,58 +1,99 @@
 body {
+  min-height: 4320px;
   font-family: Arial, sans-serif;
-  background: linear-gradient(to top, darkblue, purple);
+  background-image: url(https://i.imgur.com/vmaF3AK.jpeg);
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-size: cover;
+ background-position: center;
   padding: 20px;
   color:white;
 }
 
-h1 {
-  color: violet;
-  text-align: center;
-  margin-left: 300px;
-}
-
-h2 {
-  margin-top: 30px;
-  color:lightgray;
-}
-
-p {
-  line-height: 1.6;
-}
-
-img {
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 .boton {
   position: absolute;
-  top: 350px;
-  left: 500px;
+  top: 390px;
+  left: 730px;
   display: inline-block;
-  padding: 10px 20px;
-  background-color: lightblue;
-  color: black;
-  font-family: Impact;
+  padding: 20px 40px;
+  background-color: darkblue;
+  color: white;
+  font-family: Serif;
   text-decoration: none;
+  font-size: 24px;
   border-radius: 5px;
 }
 .boton:hover {
   background-color: deepskyblue;
   z-index: 1;
 }
-.fondo {
+.mano {
   position: absolute;
-  top: 170px;
-  left: 270px;
+  top: 10px;
+  left: 380px;
   width: 50%;
   z-index: -1;  
-
+}
 img {       
   display: block;           
   margin: 20px auto;         
+}
+
+.e1 {
+  position: absolute; 
+  top: 934px;
+  right: 0;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+}
+
+.e2 {
+  position: absolute; 
+  top: 934px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+.clift {
+  position: absolute; 
+  top: 934px;
+  right: 0;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+}
+
+.e3 {
+  position: absolute; 
+  top: 934px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: -2;
+}
+
+.eye1 {
+  position: absolute; 
+  top: 3000px;
+  left: 30px;
+  width: 20%;
+  height: auto;
+  z-index: -1;
+}
+
+.eye2 {
+  position: absolute; 
+  top: 3200px;
+  left: 200px;
+  width: 20%;
+  height: auto;
+  z-index: -1;
+}
+
+.star1 {
+  position: absolute; 
+  top: 200px;
+  left: -100px;
 }
