@@ -1,0 +1,37 @@
+const btn = document.getElementById("cloudBtn");
+const video = document.getElementById("introVideo");
+const intro = document.getElementById("intro");
+const arrow = document.getElementById("arrow");
+
+btn.onclick = async () => {
+  btn.style.display = "none";
+  video.style.display = "block";
+
+  try {
+    await video.play();
+  } catch {
+    video.muted = true;
+    await video.play();
+  }
+};
+
+video.onended = () => {
+  intro.style.display = "none";
+  arrow.style.opacity = 1;
+};
+
+window.addEventListener("scroll", () => {
+  document.querySelectorAll(".item").forEach(el => {
+    if (el.getBoundingClientRect().top < innerHeight - 80) {
+      el.style.opacity = 1;
+      el.style.transform = "translateY(0)";
+    }
+  });
+});
+
+send.onclick = () => {
+  if (dream.value.trim()) {
+    messages.innerHTML += `<p>${dream.value}</p>`;
+    dream.value = "";
+  }
+};
