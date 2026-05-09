@@ -3,22 +3,79 @@
 
   <head>
     <meta charset="UTF-8">
-    <title>Prueba</title>
+    <title>Pagina_IA</title>
     <link rel="stylesheet" href="./style.css">
 
   </head>
     
   <body>
-  <h1>¿Duermes bien?</h1>
-<p>Si</p>
+  <!-- INTRO -->
+<div id="intro">
+  <button id="cloudBtn"><span>?</span></button>
 
-<h2>NO</h2>
-<p>Puede</p>
+  <video id="introVideo" preload="metadata" playsinline webkit-playsinline>
+    <source src="https://i.imgur.com/HeQ0etw.mp4" type="video/mp4">
+  </video>
+</div>
 
-<a href="https://sepanalitica.es/materiales/carl-gustav-jung/" class="boton">¿Más?</a>
+<!-- FLECHA (queda debajo del intro, por encima del resto) -->
+<div id="arrow">⬇</div>
 
-<img src="https://images.unsplash.com/photo-1536183922588-166604504d5e?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZGFyayUyMHNlYXxlbnwwfHwwfHx8MA%3D%3D" alt="mar_oscuro" width="300" class="fondo">
-    
+<!-- CONTENIDO -->
+<main id="content">
+
+  <!-- GALERÍA -->
+  <section id="gallery">
+    <div class="col">
+      <div class="item">
+        <img src="https://i.imgur.com/XLYlG9e.gif">
+        <span>RC</span>
+      </div>
+      <div class="item">
+        <img src="https://i.imgur.com/LiuwUpZ.gif">
+        <span>MID</span>
+      </div>
+      <div class="item">
+        <img src="https://i.imgur.com/bV5jLc9.gif">
+        <span>KT</span>
+      </div>
+      <div class="item">
+        <img src="https://i.imgur.com/hLim0Yv.gif">
+        <span>SR</span>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="item">
+        <img src="https://i.imgur.com/BBy9tZV.gif">
+        <span>MLS</span>
+      </div>
+      <div class="item">
+        <img src="https://i.imgur.com/vSc3Exw.gif">
+        <span>CCM</span>
+      </div>
+      <div class="item">
+        <img src="https://i.imgur.com/iaS9GL0.gif">
+        <span>AFR</span>
+      </div>
+      <div class="item">
+        <img src="https://i.imgur.com/jspdlXU.gif">
+        <span>HV</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENSAJES -->
+  <section id="messagesSection">
+    <p>¿Compartes pesadillas?</p>
+    <textarea id="dream"></textarea><br>
+    <button id="send">Enviar</button>
+    <div id="messages"></div>
+  </section>
+
+</main>
+    <script  src="./script.js"></script>
+
   </body>
   
 </html>
