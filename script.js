@@ -1,144 +1,39 @@
-body {
-  margin: 0;
-  background-image: url(https://i.imgur.com/vmaF3AK.jpeg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  overflow-x: hidden;
-}
+const btn = document.getElementById("cloudBtn");
+const video = document.getElementById("introVideo");
+const intro = document.getElementById("intro");
+const arrow = document.getElementById("arrow");
 
-/* ---------- INTRO ---------- */
-#intro {
-  position: fixed;
-  inset: 0;
-  z-index: 20;
-}
+btn.onclick = async () => {
+  btn.style.display = "none";
+  video.style.display = "block";
 
-#introVideo {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  display: none;
-}
+  try {
+    await video.play();
+  } catch {
+    video.muted = true;
+    await video.play();
+  }
+};
 
-/* ---------- NUBE ---------- */
-#cloudBtn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 160px;
-  height: 90px;
-  border-radius: 60px;
-  border: none;
-  background: white;
-  cursor: pointer;
-}
+video.onended = () => {
+  intro.style.display = "none";
+  arrow.style.opacity = 1;
+};
 
-#cloudBtn span {
-  position: relative;
-  z-index: 3;
-  font-size: 42px;
-  font-weight: bold;
-}
+window.addEventListener("scroll", () => {
+  document.querySelectorAll(".item").forEach(el => {
+    if (el.getBoundingClientRect().top < innerHeight - 80) {
+      el.style.opacity = 1;
+      el.style.transform = "translateY(0)";
+    }
+  });
+});
 
-#cloudBtn::before,
-#cloudBtn::after {
-  content: "";
-  position: absolute;
-  background: white;
-  border-radius: 50%;
-}
-
-#cloudBtn::before {
-  width: 80px;
-  height: 80px;
-  top: -35px;
-  left: 10px;
-}
-
-#cloudBtn::after {
-  width: 100px;
-  height: 100px;
-  top: -45px;
-  right: 5px;
-}
-
-/* ---------- FLECHA ---------- */
-#arrow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 90px;
-  color: white;
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* ---------- CONTENIDO ---------- */
-#content {
-  position: relative;
-  padding-top: 100vh; /* empieza JUSTO debajo de la flecha */
-}
-
-/* ---------- GALERÍA ---------- */
-#gallery {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between; /* mismo margen centro y extremos */
-  gap: 120px;
-}
-
-.col {
-  display: flex;
-  flex-direction: column;
-  gap: 120px;
-}
-
-.item {
-  text-align: center;
-  opacity: 0;
-  transform: translateY(60px);
-  transition: 1s;
-}
-
-.item img {
-  width: 400px;
-}
-
-.item span {
-  display: block;
-  margin-top: 14px;
-  font-size: 26px;
-  letter-spacing: 4px;
-  color: white;
-}
-
-/* ---------- MENSAJES ---------- */
-#messagesSection {
-  max-width: 1000px;
-  margin: 300px auto 200px;
-  text-align: center;
-  color: white;
-}
-
-#messagesSection p {
-  font-size: 36px;
-  margin-bottom: 30px;
-}
-
-#dream {
-  width: 70%;
-  max-width: 700px;
-  height: 150px;
-  font-size: 18px;
+send.onclick = () => {
+  if (dream.value.trim()) {
+    messages.innerHTML += `<p>${dream.value}</p>`;
+    dream.value = "";
+  }
+};
   padding: 12px;
 }
